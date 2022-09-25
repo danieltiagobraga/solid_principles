@@ -2,7 +2,9 @@
 This project revises each SOLID Principles in C#
 
 # What is SOLID?
-SOLID are five basic principles which help to create good software architecture. SOLID is an acronym where:
+SOLID are five basic principles which help to create good software architecture. 
+
+SOLID is an acronym where:
 * S stands for SRP (Single responsibility principle)
 * O stands for OCP (Open closed principle)
 * L stands for LSP (Liskov substitution principle)
