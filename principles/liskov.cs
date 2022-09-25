@@ -6,10 +6,9 @@
 
     So LISKOV principle says that child class should not break parent class’s type definition and behavior.
 
-
 */
 
-namespace LISKOV_PRINCIPLE
+namespace LISKOV_PRINCIPLE_VIOLATION
 {
     abstract class Shape {
         public virtual void Volume() {
@@ -21,12 +20,12 @@ namespace LISKOV_PRINCIPLE
     }
 
     class Circle : Shape {
-        public override void Volume()
+        public override void Area()
         {
-            base.Volume();
+            base.Area();
         }
 
-        public override void Area()
+        public override void Volume()
         {
             throw new System.NotImplementedException(); // This breaks the LSP principle 
         }

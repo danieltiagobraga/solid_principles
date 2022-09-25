@@ -8,10 +8,9 @@
     
     As responsability we can have Persistence, Logging, Validation and/or Business Logic
 
-    If we apply this principle our classes/functions we will more smaller, easy to explain, understand, implement and test.
+    If we apply this principle our classes/functions will be more small, easy to explain, understand, implement and test.
     
     Besides that we will reduce the possibility of introducing bugs every time we need to change or refactor some part of the code.
-
 
     As an example of SRP violation we can consider the class AreaCalculator that is responsable for calculate the area of a shape. 
     If we need to change the formula of the square area we will need to change an function that is also responsable for other areas. 
@@ -19,9 +18,9 @@
 
 */
 
-namespace SRP_PRINCIPLE
+namespace SRP_PRINCIPLE_VIOLATION
 {   
-    class Square : IShape
+    class Square
     {
         public int length { get; set; }        
     }
@@ -33,8 +32,7 @@ namespace SRP_PRINCIPLE
 
     class AreaCalculator
     {
-        // SRP violation
-        public int Sum(IShape s)
+        public int Area(IShape s)
         {
             if (s is Square) {
                 return 0;   // implementation for Square
@@ -51,5 +49,37 @@ namespace SRP_PRINCIPLE
 
     interface IShape
     {
+    }
+}
+
+/*
+
+    VIOLATION FIXED
+
+*/
+namespace SRP_PRINCIPLE_FIXED
+{   
+    interface IShape
+    {
+        int Area();
+    }
+    
+    class Square : IShape
+    {
+        public int length { get; set; }        
+
+        public int Area() => 0; // implementation for Square
+    }
+
+    class Circle : IShape
+    {
+        public int radius { get; set; }
+
+        public int Area() => 0; // implementation for Square
+    }
+
+    class AreaCalculator
+    {
+        public int Area(IShape s) => s.Area();
     }
 }

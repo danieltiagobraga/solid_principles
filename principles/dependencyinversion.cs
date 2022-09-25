@@ -11,7 +11,7 @@
     The example below demonstrate a class that brokes this principle
 */
 
-namespace DEPENDENCY_INVERSION_PRINCIPLE 
+namespace DEPENDENCY_INVERSION_PRINCIPLE_VIOLATION
 {
     class Configs {
         public EmailConfig emailConfig { get; set; }
@@ -26,6 +26,17 @@ namespace DEPENDENCY_INVERSION_PRINCIPLE
         public IEmailConfig emailConfig {get;set;}
         public IDatabaseConfig databaseConfig {get;set;}
     }
+    interface IEmailConfig {}
+    interface IDatabaseConfig {}
+}
+
+namespace DEPENDENCY_INVERSION_PRINCIPLE_FIXED
+{
+    class Configs {
+        public IEmailConfig emailConfig {get;set;}
+        public IDatabaseConfig databaseConfig {get;set;}
+    }
+
     interface IEmailConfig {}
     interface IDatabaseConfig {}
 }

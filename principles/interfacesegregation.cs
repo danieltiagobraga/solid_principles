@@ -8,12 +8,21 @@
 
 
 */
-namespace INTERFACE_SEGREGATION_PRINCIPLE
+namespace INTERFACE_SEGREGATION_PRINCIPLE_VIOLATION
 {
     interface IShape {
         decimal area();
         decimal volume();
     }
+}
 
-    // This interface didn't fit with all shape (e.g Circle, Rectangles didn't have volume, so the interface will break the principle)
+namespace INTERFACE_SEGREGATION_PRINCIPLE_FIXED 
+{
+    interface IFlatShape {
+        decimal area();
+    }
+
+    interface ISolidShape {
+        decimal volume();
+    }
 }
