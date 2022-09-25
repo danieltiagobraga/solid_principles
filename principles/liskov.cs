@@ -11,8 +11,6 @@
 
 namespace LISKOV_PRINCIPLE
 {
-
-
     abstract class Shape {
         public virtual void Volume() {
             // implementation here

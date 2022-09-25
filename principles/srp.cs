@@ -33,6 +33,7 @@ namespace SRP_PRINCIPLE
 
     class AreaCalculator
     {
+        // SRP violation
         public int Sum(IShape s)
         {
             if (s is Square) {
@@ -40,7 +41,7 @@ namespace SRP_PRINCIPLE
             }
 
             if (s is Circle) {
-                return 0;   // implementation
+                return 0;   // implementation for Circle
             }
 
             return 0;

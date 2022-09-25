@@ -20,4 +20,12 @@ namespace DEPENDENCY_INVERSION_PRINCIPLE
 
     class EmailConfig {}
     class DatabaseConfig {}
+
+    // Fix Config class
+    class ConfigsFix {
+        public IEmailConfig emailConfig {get;set;}
+        public IDatabaseConfig databaseConfig {get;set;}
+    }
+    interface IEmailConfig {}
+    interface IDatabaseConfig {}
 }

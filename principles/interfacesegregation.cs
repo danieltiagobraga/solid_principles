@@ -8,8 +8,6 @@
 
 
 */
-
-
 namespace INTERFACE_SEGREGATION_PRINCIPLE
 {
     interface IShape {
